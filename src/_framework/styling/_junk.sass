@@ -1,0 +1,16 @@
+// _junk.sass
+// Junk drawer for styling
+
+//##############################################################################
+// Responsive design definitions
+// Create some meaning for desktop/mobile (and maybe tablet?)
+// For now this just uses screen orientation
+// TODO Make this better
+
+@mixin desktop
+	@media only screen and (orientation: landscape)
+		@content
+
+@mixin mobile
+	@media only screen and (orientation: portrait)
+		@content

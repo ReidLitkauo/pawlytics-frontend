@@ -1,0 +1,23 @@
+// _framework.sass
+// This file includes all framework sass files.
+
+//##############################################################################
+// External spreadsheets
+
+// The reset spreadsheet, it's super useful
+@use "_framework/styling/reset"
+
+//##############################################################################
+// Internal spreadsheets
+
+// Miscellaneous modules
+@use "_framework/styling/junk" as *
+@use "_framework/styling/coloring/coloring"
+
+//##############################################################################
+// Structural styling
+
+// Header
+@use "_framework/styling/header/common"
+@use "_framework/styling/header/desktop"
+@use "_framework/styling/header/mobile"

@@ -1,0 +1,26 @@
+//- _framework.php
+//- General-purpose template for use by ALL pages.
+//- This really should go inside /_framework/layout ...
+//- ... but i'm too lazy to type all that out each time, so here it stays.
+	
+//- For some reason a normal doctype tag wouldn't put doctype on its own line??
+//- So I need this thing.
+|
+| <!DOCTYPE html>
+|
+
+html
+
+	//-###########################################################################
+	head
+		
+		include /_framework/layout/.head
+		block head
+
+	//-#############################################################################
+	body
+		
+		include /_framework/layout/header
+		
+		block body
+			p Some 404 error or something, idk

@@ -1,0 +1,12 @@
+//- index.php
+//- Wordpress requires this file be present so I have something to show.
+//- This file represents the home page.
+extends /_framework
+
+block head
+	
+	//- TODO make this automatic
+	link(rel=stylesheet href=get_theme_file_uri('index.css'))
+
+block body
+	p main page, welcome
