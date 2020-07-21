@@ -13,11 +13,14 @@
 // Miscellaneous modules
 @use "_framework/styling/junk" as *
 @use "_framework/styling/coloring/coloring"
+@use "_framework/styling/fonts"
 
 //##############################################################################
 // Structural styling
 
 // Header
-@use "_framework/styling/header/common"
-@use "_framework/styling/header/desktop"
-@use "_framework/styling/header/mobile"
+@import "_framework/styling/header/common"
++desktop
+	@import "_framework/styling/header/desktop"
++mobile
+	@import "_framework/styling/header/mobile"

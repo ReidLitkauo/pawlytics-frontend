@@ -1,6 +1,7 @@
 // _framework/theming/_apply-theme.sass
 // Contains all code that applies coloring
 
+@use "../junk" as *
 @use "colors" as *
 
 @mixin apply-colors($i)
@@ -10,3 +11,26 @@
 
 	header
 		background: $header-bg
+
+		.nav-icon:before, .nav-icon div, .nav-icon::after
+			background: $header-fg
+
+		nav
+
+			> *
+				color: $header-fg
+				text-decoration: none
+
+				+mobile
+					color: $mobile-nav-fg
+
+			.cta
+				border-color: $header-fg
+
+			.cta:hover
+				background: $header-fg
+				color: $cta1
+				border-color: $cta1
+
+			+mobile
+				background: $mobile-nav-bg

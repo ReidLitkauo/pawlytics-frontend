@@ -1,0 +1,51 @@
+header
+
+	> *
+		position: relative
+		z-index: 110
+
+	.nav-icon
+		display: block
+
+	nav
+		display: block
+		position: absolute
+		z-index: 111
+		top: 12vh
+		left: 0
+		height: 0
+		right: 0
+		overflow: hidden
+		transition: height .2s ease-in-out
+
+		> *
+			display: block
+			font-size: 3vh
+			padding: 2.5vh
+			text-align: center
+
+		> :first-child
+			margin-top: 2vh
+		> :last-child
+			margin-bottom: 2vh
+
+header.nav-open
+
+	nav
+		height: 52vh
+
+	.nav-clickout
+		display: block
+
+html[data-top='false'] header
+	height: 6vh
+
+	a.logo img
+		margin: 1vh
+		height: 4vh
+
+	.nav-icon-wrap
+		padding: 1.5vh
+
+	nav
+		top: 6vh

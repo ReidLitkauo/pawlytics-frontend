@@ -1,6 +1,63 @@
 header
+	position: fixed
+	z-index: 110
+	top: 0
+	left: 0
 	height: 12vh
+	right: 0
+	display: flex
 
-	img.logo
-		height: 8vh
-		margin: 2vh
+	a.logo
+		flex-grow: 0
+
+		img
+			// Shrink the logo a bit if needed
+			height: min(8vh, 18vw)
+			margin: 2vh
+
+	.nav-icon-wrap
+		flex-grow: 1
+		padding: 4.5vh
+		text-align: right
+
+		.nav-icon
+			display: inline-block
+			width: 3vh
+			height: 3vh
+
+		.nav-icon::before, .nav-icon div, .nav-icon::after
+			content: ""
+			display: block
+			height: 0.4vh
+			border-radius: 999vh
+			transition: transform 0.2s ease-in-out
+
+		.nav-icon::before
+			transform: translateY(0.25vh)
+		.nav-icon div
+			margin: .9vh 0
+		.nav-icon::after
+			transform: translateY(-0.25vh)
+
+	nav
+		font-family: 'Lato', sans-serif
+		font-weight: bold
+		letter-spacing: 0.1em
+
+	.nav-clickout
+		display: none
+		position: fixed
+		z-index: 100
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+
+header.nav-open
+
+	.nav-icon::before
+		transform: translateY(1.285vh) rotate(45deg)
+	.nav-icon div
+		transform: scale(0)
+	.nav-icon::after
+		transform: translateY(-1.285vh) rotate(-45deg)
