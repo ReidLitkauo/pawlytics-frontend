@@ -1,4 +1,206 @@
 // index.sass
 // Stylesheet for the main page.
 
-@use "framework"
+@use "framework" as *
+@use "_framework/styling/media" as *
+
+//##############################################################################
+// Miscellaneous
+
+.hero-img
+	position: fixed
+	z-index: 0
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-image: url('/assets/img/hero/hero-70.jpg')
+	// Let's see the dog some more :)
+	background-position: 60% 50%
+	background-size: cover
+
+section
+	position: relative
+	z-index: 1
+
+//##############################################################################
+section.splash
+
+		// Prevent breaking inside spans in this section (except at wbr tags)
+		// This allows me to have great control over where text will break
+		span
+			display: block
+			white-space: nowrap
+
+		.intro-text
+			font-family: "Nunito Sans", sans-serif
+			font-weight: bold
+			color: #ffffff
+
+			h1
+				text-shadow: 0.04em 0.08em 0.1em #000000
+
+			span.asterisk
+				display: inline-block
+				font-size: 80%
+				transform: translate(0, -0.3em)
+
+		.spacing
+			flex-grow: 1
+
+		.followup-text
+			font-family: "Nunito Sans", sans-serif
+			font-weight: bold
+			text-transform: uppercase
+			line-height: 110%
+			color: #ffffff
+
+			h3
+				padding-bottom: 2vh
+				text-shadow: 0.04em 0.08em 0.1em #000000
+
+			a.cta
+				display: inline-block
+				padding: 2vh
+				background: #dc425bb3
+				border-radius: 2vh
+				color: #ffffff
+				letter-spacing: 0.1em
+				text-decoration: none
+				transition: background 0.2s ease-in-out
+
+			a.cta:hover
+				background: #662d91
+
++desktop
+	section.splash
+		display: flex
+		height: 70vh
+		align-items: center
+		padding: 10vh 0 0
+
+		.intro-text
+			margin-left: 5vw
+			width: 30vw
+
+			h1
+				// Shrink the font size when aspect ratio drops below 3/2
+				font-size: min(8vh, calc(8vw * 2 / 3))
+
+			h2
+				margin-top: 3vh
+				font-size: min(3vh, calc(1.5vw * 2 / 3))
+
+		.followup-text
+			margin-right: 5vw
+			width: 45vw
+			padding: 20vh 0 0
+			text-align: right
+			font-size: 2.5vh
+
+			a.cta
+				margin-right: 5vw
+
+
++mobile
+	section.splash
+		display: block
+		padding: 15vh 0 5vh
+
+		.intro-text
+			text-align: center
+
+			h1
+				font-size: 3.5vh
+
+			h2
+				margin-top: 2vh
+				font-size: 2vh
+
+		.spacing
+			display: none
+
+		.followup-text
+			margin-top: 35vh
+			text-align: center
+			font-size: 2vh
+
+//##############################################################################
+section.technology-polygon
+		display: table-cell
+		width: 100vw
+		height: 40vh
+		text-align: center
+		vertical-align: middle
+		background: linear-gradient(90deg, #65318fd9 0%, #179ca6d9 100%)
+
+		p
+			font-family: "Amatic SC", serif
+			font-weight: bold
+			text-transform: uppercase
+			color: #ffffff
+
+		a.cta
+			display: inline-block
+			margin-top: 3vh
+			border: 2px solid #ffffff
+			padding: 2vh 4vh
+			font-family: "Lato", sans-serif
+			font-size: 2vh
+			font-weight: bold
+			text-transform: uppercase
+			letter-spacing: 0.15em
+			color: #ffffff
+			text-decoration: none
+			border-radius: 99999em
+			transition: color .2s ease-in-out, background .2s ease-in-out
+
+		a.cta:hover
+			color: #4e6c95
+			background: #ffffff
+
+		.transition-bottom-overlay
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			background: #ffffff
+
++desktop
+	section.technology-polygon
+		// More exaggerated clipping on desktop
+		clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)
+
+		p
+			font-size: 7vh
+
+		.transition-bottom-overlay
+			clip-path: polygon(0% 100%, 0% 75%, 50% 100%, 100% 75%, 100% 100%)
+
++mobile
+	section.technology-polygon
+		// Make the clipping less exaggerated on mobile (preserve screen space)
+		clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 0% 100%, 0% 15%)
+
+		p
+			font-size: 5vh
+			padding: 0 10vw
+
+		a.cta
+			span.moretext
+				// Disable "14 Day" text on mobile
+				display: none
+
+		.transition-bottom-overlay
+			clip-path: polygon(0% 100%, 0% 85%, 50% 100%, 100% 85%, 100% 100%)
+
+//##############################################################################
+section.features
+	// TODO!!!
+	// There's a small space between this and the .transition-bottom-overlay
+	// from the last section? And the gradient from the last section is
+	// showing through it? So I'm hacking this for now TODO
+	top: -.1vh
+	height: 80vh
+	background: #ffffff

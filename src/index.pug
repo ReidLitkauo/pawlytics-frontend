@@ -7,7 +7,42 @@ block head
 	
 	//- TODO make this automatic
 	link(rel=stylesheet href=get_theme_file_uri('index.css'))
-	script(src=get_theme_file_uri('index.js'))
+	script(defer src=get_theme_file_uri('index.js'))
 
 block body
-	p main page, welcome
+	
+	//-###########################################################################
+	//- Miscellaneous
+	
+	.hero-img
+	
+	//-###########################################################################
+	section.splash
+		
+		.intro-text
+			h1
+				span. Affordable, #[wbr]Easy To Adopt#[span.asterisk *]
+				span. Animal Rescue #[wbr]Software
+			h2 #[span.asterisk *] pun intended
+		
+		.spacing
+
+		.followup-text
+			h3
+				span Modern software #[wbr]designed to reduce
+				span busy work for foster #[wbr]based resources.
+			h3
+				span Free yourself to #[wbr]get back to the basics:
+				span Saving animals.
+			a.cta(href='https://app.pawlytics.com/signup') Try Pawlytics Free
+
+	//-###########################################################################
+	section.technology-polygon
+		
+		p With technology, no pet is beyond our reach.
+		a.cta(href='https://app.pawlytics.com/signup')
+			| Begin Your #[span.moretext 14 Day] Free Trial
+		.transition-bottom-overlay
+
+	//-###########################################################################
+	section.features

@@ -9,13 +9,18 @@
 | <!DOCTYPE html>
 |
 
-html
+html(lang='en')
 
 	//-###########################################################################
 	head
 		
 		include /_framework/layout/.head
+		
 		block head
+		
+		title
+			block title
+				| Pawlytics
 
 	//-#############################################################################
 	body

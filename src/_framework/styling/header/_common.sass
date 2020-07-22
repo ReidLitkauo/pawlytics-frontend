@@ -6,6 +6,7 @@ header
 	height: 12vh
 	right: 0
 	display: flex
+	transition: height .2s ease-in-out
 
 	a.logo
 		flex-grow: 0
@@ -14,16 +15,22 @@ header
 			// Shrink the logo a bit if needed
 			height: min(8vh, 18vw)
 			margin: 2vh
+			transition: height .2s ease-in-out
 
 	.nav-icon-wrap
 		flex-grow: 1
 		padding: 4.5vh
 		text-align: right
+		transition: padding .2s ease-in-out
 
 		.nav-icon
 			display: inline-block
 			width: 3vh
 			height: 3vh
+			// The following three styles cancel default button drawing
+			background: none
+			border: 0
+			padding: 0
 
 		.nav-icon::before, .nav-icon div, .nav-icon::after
 			content: ""
@@ -42,6 +49,7 @@ header
 	nav
 		font-family: 'Lato', sans-serif
 		font-weight: bold
+		text-transform: uppercase
 		letter-spacing: 0.1em
 
 	.nav-clickout
